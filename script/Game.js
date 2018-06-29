@@ -40,7 +40,7 @@ IronGame.prototype.gameLost = function() {
   myMusic.play();
   update();
 };
-// var timeLeft = 4900;
+var timeLeft = 4900;
 
 var frames = 0;
 function update(){
