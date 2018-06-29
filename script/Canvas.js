@@ -11,35 +11,50 @@ var MusicNote = function() {
   this.startingY = 530;
   this.startingH = 90;
   this.startingW = 100;
-  img.src = musicNoteImages[[Math.floor(Math.random() *4)]];
+  this.src = musicNoteImages[[Math.floor(Math.random() *4)]];
 }
 
 /////////////////////////////////////////////////////////////////////////////
 
 MusicNote.prototype.moveNote = function(){
-for(var i=0; i < musicNotes.length; i++){
-  console.log("musicNotes[i]============== ", musicNotes[i].startingY)
-  musicNotes[i].startingY -= 50;
-   }
+
+  setInterval(()=>{
+
+    // for(var i=0; i < musicNotes.length; i++){
+      // console.log("musicNotes[i]============== ", this.startingY)
+      this.startingY -= 20;
+      //  }
+  }, 200)
   };
 
+
+  function drawNotes(){
+    musicNotes.forEach(function(k){
+      var img = new Image();
+      img.src = k.src;
+
+      img.onload = function(){
+        ctx.drawImage(img, k.startingX, k.startingY, k.startingW, k.startingH);
+      }
+
+    })
+  }
   /////////////////////////////////////////////////////////////////////
 
-  MusicNote.prototype.newNote = function() {
+ function newNote() {
     that = this;
     var random = Math.floor(1+ Math.random()*2); 
     for(var i = 0; i < random; i++){  
-      this.theNote = new MusicNote();
-      musicNotes.push(this.theNote);
+      var theNote = new MusicNote();
+      musicNotes.push(theNote);
       
       theImage = new Image();
-      theImage.src = musicNoteImages[[Math.floor(Math.random() *4)]];
-
+      theImage.src = theNote.src; 
         
-          ctx.drawImage(theImage, this.theNote.startingX, that.startingY, that.startingW, that.startingH);
+          ctx.drawImage(theImage, theNote.startingX, theNote.startingY, theNote.startingW, theNote.startingH);
+          theNote.moveNote();
                 }
     
-      return musicNotes;
  }
 
 ///////////////////////////////////////////////////////////////////////

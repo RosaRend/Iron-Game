@@ -11,12 +11,12 @@ body{
   display: block;
   width: 720px;
   border: 5px solid #000;
-  background-image: url('../images/music_bg.png');
+  background-image: url('../images/NEWgramophone.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
 }
-.score-board{
+.point-board{
   float: left;
   padding: 10px;
   margin: 15px;
