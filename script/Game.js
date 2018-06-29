@@ -40,43 +40,43 @@ IronGame.prototype.gameLost = function() {
   myMusic.play();
   update();
 };
+// var timeLeft = 4900;
 
 var frames = 0;
 function update(){
   setInterval(function(){
-    ctx.clearRect(0,0,720,645)
-    // theMusicNotes = new MusicNote();
-    newImg1();
-    newImg2();
-    newImg3();
-    newImg4();
-    
-    dividers();
-    
-    pointZone();
-    
-  
-    if (frames % 40 === 0){
-      newNote();
+    if(timeLeft >= 0){
+      timeLeft --;
+      ctx.clearRect(0,0,720,645)
+      // theMusicNotes = new MusicNote();
+      newImg1();
+      newImg2();
+      newImg3();
+      newImg4();
+      
+      dividers();
+      
+      pointZone();
+      
+      
+      if (frames % 40 === 0){
+        newNote();
+      }
+      drawNotes();
+      // note.moveNote()
+      frames++;
     }
-    
-    drawNotes();
-    // note.moveNote()
-    frames++;
+    // console.log(timeLeft)
   }, 50)
 }
 
 function updateScore(){
-  var  points = document.getElementById("score-board");
-  points = newGame.score;
-}
-
-// div = score{
-//   span = id
+  console.log(newGame.score)
+  document.getElementById("score-board").innerHTML = newGame.score;
 // }
 // function update score{
 //   span => newGame.score
-// }
+}
 
 
 
@@ -141,6 +141,7 @@ else{
 updateScore();
 console.log( 'your score: '+ newGame.score);
 }
+
 
 var modal = document.getElementById('myModal');
 
