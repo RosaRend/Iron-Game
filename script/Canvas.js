@@ -28,11 +28,10 @@ MusicNote.prototype.moveNote = function(){
   // img.src = musicNoteImages[[Math.floor(Math.random() *4)]];
 
     setInterval(function() {
-      console.log("yeyyeyeyeyey: ", musicNotes)
 for(var i=0; i < musicNotes.length; i++){
-  console.log("musicNotes[i].startingY ============== ", musicNotes[i].startingY)
+  console.log("musicNotes[i]============== ", musicNotes[i].startingY)
   musicNotes[i].startingY -= 50;
-
+// console.log(  musicNotes[i].startingY -= 50)
 }
   //     that.theNote = new MusicNote();
       
@@ -45,7 +44,8 @@ for(var i=0; i < musicNotes.length; i++){
 
       }, 1000)
   
-  }
+  };
+
   
   /////////////////////////////////////////////////////////////////////
 
@@ -107,7 +107,7 @@ function dividers(){
   ctx.moveTo(540, 0);
   ctx.lineTo(540, 720);
   ctx.lineWidth = 2;
-  ctx.stroke();
+  ctx.stroke();      
   
   ctx.beginPath();
   ctx.moveTo(720, 0);
