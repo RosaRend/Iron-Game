@@ -1,10 +1,7 @@
   var ctx = document.getElementById('IronGame').getContext('2d');
-  
   var musicNotes = [];
-
   var startingPosition = [45, 255, 405, 585];
   var musicNoteImages = ['./images/purple_note.png', './images/green_note.png', './images/purple_note2.png', './images/green_note2.png'];
-
   var img = new Image;
 
 /////////////////////////////////////////////////////////////
@@ -14,77 +11,36 @@ var MusicNote = function() {
   this.startingY = 530;
   this.startingH = 90;
   this.startingW = 100;
-  
   img.src = musicNoteImages[[Math.floor(Math.random() *4)]];
 }
 
 /////////////////////////////////////////////////////////////////////////////
 
 MusicNote.prototype.moveNote = function(){
-  // var that = this;
-  // // var startYPosition = 550;
-  // // var endYPosition = 0;
-  
-  // img.src = musicNoteImages[[Math.floor(Math.random() *4)]];
-
-    setInterval(function() {
 for(var i=0; i < musicNotes.length; i++){
   console.log("musicNotes[i]============== ", musicNotes[i].startingY)
   musicNotes[i].startingY -= 50;
-// console.log(  musicNotes[i].startingY -= 50)
-}
-  //     that.theNote = new MusicNote();
-      
-  //     theImage = new Image();
-
-  //     theImage.onload = function(){
-  //       theImage = ['./images/purple_note.png', './images/green_note.png', './images/purple_note2.png', './images/green_note2.png'];
-  //       ctx.drawImage(theImage, that.startingX, that.startingY, that.startingW, that.startingH);
-  //     }
-
-      }, 1000)
-  
+   }
   };
 
-  
   /////////////////////////////////////////////////////////////////////
 
   MusicNote.prototype.newNote = function() {
     that = this;
-    setInterval(function(){
-      // console.log(musicNotes)
-      
-    
-    var random = Math.floor(1+ Math.random()*2);
-    // console.log("random: ", random)
-    
-    for(var i = 0; i < random; i++){
-      
+    var random = Math.floor(1+ Math.random()*2); 
+    for(var i = 0; i < random; i++){  
       this.theNote = new MusicNote();
       musicNotes.push(this.theNote);
-      // console.log("hello: ", this.theNote)
       
-      // console.log(this.musicNotes[0].startingX);
-
       theImage = new Image();
       theImage.src = musicNoteImages[[Math.floor(Math.random() *4)]];
 
-      //   theImage.onload = function(){
-          console.log("that.startingY: ", that.startingY);
-          
+        
           ctx.drawImage(theImage, this.theNote.startingX, that.startingY, that.startingW, that.startingH);
-      // }
+                }
     
-    // if(this.musicNotes[i].startingX === this.theNote.startingX && this.musicNotes[i].startingY === this.theNote.startingY){
-    //   console.log('heyyyyy')
-    //   theNote = new MusicNote();
-    
-    // }
-    // musicNotes.push(theNote);
-  }
-}, 1000)
-return musicNotes;
-}
+      return musicNotes;
+ }
 
 ///////////////////////////////////////////////////////////////////////
 

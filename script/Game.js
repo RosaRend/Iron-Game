@@ -18,7 +18,7 @@ IronGame.prototype.gameLost = function() {
  function startGame(){
   newGame = new IronGame();
   // this.ironCanvas = new IronCanvas();
-  theMusicNotes = new MusicNote();
+  // theMusicNotes = new MusicNote();
 
   newImg1();
   newImg2();
@@ -28,19 +28,23 @@ IronGame.prototype.gameLost = function() {
   dividers();
 
   pointZone();
-
+  update()
   // MusicNote();
-  theMusicNotes.newNote();
-  theMusicNotes.moveNote();
+  // theMusicNotes.newNote();
+  // theMusicNotes.moveNote();
 };
+function update(){
+  setInterval(function(){
+    ctx.clearRect(0,0,720,645)
+    theMusicNotes = new MusicNote();
+theMusicNotes.newNote()
+theMusicNotes.moveNote()
+  }, 1000)
+}
 
 
-// document.onkeypress = function(evt) {
-//   evt = evt || window.event;
 
-//   var charCode = evt.keyCode || evt.which;
-//   var charStr = String.fromCharCode(charCode);
-// }
+
 document.onkeydown = function(e){
 
   switch(e.keyCode){
