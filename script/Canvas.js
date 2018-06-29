@@ -21,53 +21,68 @@ var MusicNote = function() {
 /////////////////////////////////////////////////////////////////////////////
 
 MusicNote.prototype.moveNote = function(){
-  var that = this;
-  // var startYPosition = 550;
-  // var endYPosition = 0;
+  // var that = this;
+  // // var startYPosition = 550;
+  // // var endYPosition = 0;
   
-  img.src = musicNoteImages[[Math.floor(Math.random() *4)]];
-  setInterval(function(draw, speed) {
-    that.theNote = new MusicNote();
-    that.startingY -= 5;
-    
-    // that.theNotestartingY -= 10;
-    // musicNotes.forEach( function(){
-    //   if(that.theNote.startYPosition > 0 && that.theNote.startingX == 45){
-    //     that.theNote.startingY -= 10;
-    //   }
-    // })
+  // img.src = musicNoteImages[[Math.floor(Math.random() *4)]];
 
-    }, 2000)
+    setInterval(function() {
+      console.log("yeyyeyeyeyey: ", musicNotes)
+for(var i=0; i < musicNotes.length; i++){
+  console.log("musicNotes[i].startingY ============== ", musicNotes[i].startingY)
+  musicNotes[i].startingY -= 50;
+
+}
+  //     that.theNote = new MusicNote();
+      
+  //     theImage = new Image();
+
+  //     theImage.onload = function(){
+  //       theImage = ['./images/purple_note.png', './images/green_note.png', './images/purple_note2.png', './images/green_note2.png'];
+  //       ctx.drawImage(theImage, that.startingX, that.startingY, that.startingW, that.startingH);
+  //     }
+
+      }, 1000)
+  
   }
   
   /////////////////////////////////////////////////////////////////////
 
-MusicNote.prototype.newNote = function() {
-  
-  setInterval(function(){
-    console.log(musicNotes)
+  MusicNote.prototype.newNote = function() {
+    that = this;
+    setInterval(function(){
+      // console.log(musicNotes)
+      
     
-    var random = Math.floor(1+ Math.random()*2)
+    var random = Math.floor(1+ Math.random()*2);
+    // console.log("random: ", random)
     
     for(var i = 0; i < random; i++){
       
       this.theNote = new MusicNote();
-      musicNotes.push(theNote);
+      musicNotes.push(this.theNote);
+      // console.log("hello: ", this.theNote)
       
       // console.log(this.musicNotes[0].startingX);
 
       theImage = new Image();
-      theImage.onload = function(){
-        ctx.drawImage(theImage, that.startingX, that.startingY, that.startingW, that.startingH);
-      }
+      theImage.src = musicNoteImages[[Math.floor(Math.random() *4)]];
+
+      //   theImage.onload = function(){
+          console.log("that.startingY: ", that.startingY);
+          
+          ctx.drawImage(theImage, this.theNote.startingX, that.startingY, that.startingW, that.startingH);
+      // }
     
-    if(this.musicNotes[i].startingX === this.theNote.startingX && this.musicNotes[i].startingY === this.theNote.startingY){
-      theNote = new MusicNote();
+    // if(this.musicNotes[i].startingX === this.theNote.startingX && this.musicNotes[i].startingY === this.theNote.startingY){
+    //   console.log('heyyyyy')
+    //   theNote = new MusicNote();
     
-    }
-    musicNotes.push(theNote);
+    // }
+    // musicNotes.push(theNote);
   }
-}, 2500)
+}, 1000)
 return musicNotes;
 }
 

@@ -4,17 +4,9 @@ var newGame = new IronGame();
   
 function IronGame(){
   this.keysClicked = [];
-  //          a:65 w:87 d:83 s:68  
+  //          
   this.score = 0; 
-  // this.ironCanvas = new IronCanvas();
 };
-
-// IronCanvas.prototype.cameCloseZone = function(){
-//   this.rhythmObject = rhythmObj;
-//   if(rhythmObj.raduis + disks.raduis <=10){
-//     return newGame.incorrectKey();
-//   }
-// }
 
 IronGame.prototype.gameLost = function() {
   if(score <= -100){
@@ -41,6 +33,7 @@ IronGame.prototype.gameLost = function() {
   theMusicNotes.newNote();
   theMusicNotes.moveNote();
 };
+
 
 // document.onkeypress = function(evt) {
 //   evt = evt || window.event;
