@@ -1,11 +1,12 @@
-body{
+body {
   background: #000;
   margin: auto;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-#IronGame{ 
+
+#IronGame {
   padding: 0;
   margin: auto;
   display: block;
@@ -16,12 +17,14 @@ body{
   background-size: cover;
   z-index: 0;
 }
-.point-board{
+
+.point-board {
   float: left;
   padding: 10px;
-  margin: 15px;
+  margin: 20px;
   background: #daa520;
 }
+
 /* #start-game-button{
   margin: 20px;
   box-shadow: #fff 5px 5px 50px, #fff -5px -5px 50px;
