@@ -2,9 +2,7 @@
 
 var newGame = new IronGame();
 
-function IronGame() {
-  // this.keysClicked = [];
-  //          
+function IronGame() {       
   this.score = 0;
 };
 
@@ -49,7 +47,7 @@ function update() {
     if (timeLeft >= 0) {
       timeLeft--;
       ctx.clearRect(0, 0, 720, 645)
-      // theMusicNotes = new MusicNote();
+
       newImg1();
       newImg2();
       newImg3();
@@ -63,7 +61,7 @@ function update() {
         newNote();
       }
       drawNotes();
-      // note.moveNote()
+
       frames++;
     }
     // console.log(timeLeft)

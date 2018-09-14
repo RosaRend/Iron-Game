@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Game On</title>
-  <link rel="stylesheet" href="./stylesheet/main.css" type="text/css"/>
+  <title>RHYTHM AND TIME</title>
+  <link rel="stylesheet" href="./stylesheet/main.css" type="text/css" />
 </head>
+
 <body>
-  
+
   <div class="to-center">
     <h1>RHYTHM AND TIME</h1>
-    <a href="./GamePage.html"><h3>Let's Play!</h3></a>
+    <a href="./GamePage.html">
+      <h3>Let's Play!</h3>
+    </a>
 
-    <button id="myBtn"><h3>Instructions</h3></button>
+    <button id="myBtn">
+      <h3>Instructions</h3>
+    </button>
 
     <div id="myModal" class="modal">
-    
+
       <div class="modal-content">
         <div class="modal-header">
           <h2>Game Play</h2>
-        <span class="close">&times;</span>
+          <span class="close">&times;</span>
         </div>
         <div class="modal-body">
-        <p>The objective of the game is to time when your scrolling music 
-          note reaches the center of 
-          your equalizer. The closer you are the higher you score.
-          <p><b>Layout</b></p>
-          <p>Each column is assigned one letter.</p>
-          <ul>
-            <li>First Column: "a"</li>
-            <li>Second Column: "s"</li>
-            <li>Third Column: "d"</li>
-            <li>Forth Column: "f"</li>
-          </ul>
-          <p><b>How to score:</b></p>
-          <ul>
-            <li>Center wave: +100pts</li>
-            <li>Off center: +40pts</li>
-            <li>Off key: -25pts</li>
-          </ul>
-        </p>
+          <p>The objective of the game is to time when your scrolling music
+            note reaches the center of
+            your equalizer. The closer you are the higher you score.
+            <p><b>Layout</b></p>
+            <p>Each column is assigned one letter.</p>
+            <ul>
+              <li>First Column: "a"</li>
+              <li>Second Column: "s"</li>
+              <li>Third Column: "d"</li>
+              <li>Forth Column: "f"</li>
+            </ul>
+            <p><b>How to score:</b></p>
+            <ul>
+              <li>Center wave: +100pts</li>
+              <li>Off center: +40pts</li>
+              <li>Off key: -25pts</li>
+            </ul>
+          </p>
+        </div>
       </div>
-      </div>
-    
+
     </div>
   </div>
-  
+
   <script type="text/javascript" src="script/Canvas.js"></script>
   <script type="text/javascript" src="script/Game.js"></script>
 </body>
+
 </html>
